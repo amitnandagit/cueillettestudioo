@@ -1,0 +1,259 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  10.5 service-details
+/*----------------------------------------*/
+.demo {
+    background-color: rgba(26, 26, 26, 0.95);
+    overflow: hidden;
+
+    &__space {
+        padding-top: 120px;
+        padding-bottom: 80px;
+
+        @media #{$md} {
+            padding-top: 80px;
+        }
+
+        @media #{$sm,$xs} {
+            padding-top: 70px;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+
+    &__shape {
+        .image-1 {
+            position: absolute;
+            width: auto;
+            right: -53px;
+        }
+
+        .image-2 {
+            position: absolute;
+            width: auto;
+            left: -450px;
+            top: 973px;
+        }
+    }
+
+    &__future {
+        padding-bottom: 70px;
+
+        ul {
+            gap: 63px;
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            align-content: center;
+            justify-content: center;
+
+            @media #{$lg, $md, $sm, $xs} {
+                justify-content: flex-start;
+                gap: 30px;
+            }
+
+            li {
+                gap: 13px;
+                display: flex;
+                font-size: 18px;
+                flex-wrap: wrap;
+                position: relative;
+                align-items: center;
+                font-family: var(--rr-ff-heading);
+
+                i {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    font-size: 16px;
+                    align-items: center;
+                    justify-content: center;
+                    @include border-radius(500px);
+                    background-color: var(--rr-theme-primary-2);
+                }
+            }
+        }
+    }
+
+    &__item {
+        height: 500px;
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        align-items: center;
+        flex-direction: column;
+        @include border-radius(15px);
+        justify-content: center;
+        background-color: #02050A;
+        margin-bottom: 40px;
+        position: relative;
+
+        @media #{$xs} {
+            height: 400px;
+        }
+        .new-badge{
+            background-color: var(--rr-theme-primary-2);
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--rr-common-white);
+            font-family: var(--rr-ff-body);
+            z-index: 99999999;
+        }
+
+        &-group {
+            &__hover {
+                top: 0;
+                width: 20%;
+                height: 100%;
+                opacity: 0.7;
+                position: absolute;
+                transition: all 0.5s ease 0s;
+                transform: translateY(-100%);
+                background-color: var(--rr-theme-primary-2);
+
+                &--1 {
+                    left: 0;
+                    transition-delay: 0.105s;
+                }
+
+                &--2 {
+                    left: 20%;
+                    transition-delay: 0.15s;
+                }
+
+                &--3 {
+                    left: 40%;
+                    transition-delay: 0.2s;
+                }
+
+                &--4 {
+                    left: 60%;
+                    transition-delay: 0.25s;
+                }
+
+                &--5 {
+                    left: 80%;
+                    transition-delay: 0.3s;
+                }
+            }
+        }
+
+        &-thumb {
+            height: 500px;
+            background-position: top;
+        }
+
+        >span {
+            font-size: 48px;
+            font-weight: 800;
+            font-style: italic;
+            text-align: center;
+            line-height: 58px;
+            text-transform: uppercase;
+        }
+
+        &-title {
+            bottom: 0;
+            z-index: 3;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 10px;
+            position: absolute;
+            font-weight: var(--rr-fw-sbold);
+            color: var(--rr-common-white);
+            background-color: var(--rr-theme-primary-2);
+        }
+
+        &-btn {
+            gap: 15px;
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            z-index: 4;
+
+            & .rr-btn {
+                opacity: 0;
+                visibility: hidden;
+                transform: translate(-30px, 0px);
+                transition: all 0.5s ease 0s;
+                span {
+                    background: var(--rr-common-white);
+                }
+            }
+
+            
+
+        }
+
+        &:hover {
+            &::before {
+                height: 100%;
+            }
+
+            .demo__item-group {
+                &__hover {
+                    transform: translateY(0);
+                }
+
+                .rr-btn_2 {
+                    background: var(--rr-heading-primary);
+                }
+            }
+
+            &.demo__item-hover {
+
+                &::before {
+                    opacity: 0;
+                    height: 0;
+                }
+            }
+
+            .demo__item-btn .rr-btn {
+                transform: translate(0, 0px);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.inner-page {
+    overflow: hidden;
+    background-color: var(--rr-theme-primary-2);
+
+    &__item {
+        max-width: 544px;
+        margin-right: 24px;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include border-radius(15px);
+        }
+    }
+}
+
+.innner-page-active,
+.innner-page-active_rtl {
+    .swiper-wrapper {
+        transition-timing-function: linear;
+
+        .swiper-slide {
+            width: auto;
+        }
+    }
+}

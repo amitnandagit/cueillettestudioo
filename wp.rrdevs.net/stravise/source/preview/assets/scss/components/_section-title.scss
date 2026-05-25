@@ -1,0 +1,60 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.6 sectiontitle
+/*----------------------------------------*/
+.section {
+  position: relative;
+
+  &__title-wrapper {
+    position: relative;
+    
+    img {
+      width: auto;
+      top: -90px;
+      z-index: 0;
+      position: absolute;
+      left: calc(50% - 222.5px - 65.5px);
+
+    }
+
+    &-2 {
+      img {
+        position: absolute;
+        left: calc(50% - 567px/2 + 540.5px);
+        top: 0;
+
+        @media #{$xl} {
+          left: calc(50% - 339.5px + 540.5px);
+        }
+        @media #{$lg} {
+          left: calc(50% - 440.5px + 540.5px);
+        }
+        @media #{$md} {
+          left: calc(50% - 543.5px + 540.5px);
+        }
+        @media #{$sm, $xs} {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    &-one {
+      color: var(--rr-heading-primary);
+    }
+  }
+  &__subtitle {
+    z-index: 2;
+    position: relative;
+    font-size: 20px;
+    font-weight: var(--rr-fw-medium);
+    &-one {
+      color: var(--rr-heading-primary);
+    }
+  }
+}
+

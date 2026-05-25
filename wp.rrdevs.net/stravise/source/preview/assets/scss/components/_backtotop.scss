@@ -1,0 +1,142 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.10 backtotop
+/*----------------------------------------*/
+
+/* Scroll To Top */
+#scroll-percentage {
+    position: absolute;
+
+}
+
+#scroll-percentage {
+    height: 60px;
+    width: 60px;
+    background-color: var(--rr-common-white);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 50px;
+    transform: scale(0);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 100;
+    @media #{$md, $sm, $xs}{
+        right: 30px;
+    }
+    @media #{$sm, $xs}{
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+#scroll-percentage.active {
+    bottom: 50px;
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    -webkit-animation: 500ms ease-in-out 0s normal none 1 running scrollToTop;
+    animation: 500ms ease-in-out 0s normal none 1 running scrollToTop;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    @media #{$md, $sm, $xs}{
+        bottom: 30px;
+    }
+    @media #{$sm, $xs}{
+        bottom: 20px;
+    }
+}
+
+#scroll-percentage-value {
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+    background-color: var(--rr-common-white);
+    color: var(--rr-theme-primary-2);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#scroll-percentage-value i {
+    font-size: 20px;
+}
+
+@-webkit-keyframes scrollToTop {
+    0% {
+        -webkit-transform: translate3d(0, 80%, 0);
+        transform: translate3d(0, 80%, 0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes scrollToTop {
+    0% {
+        -webkit-transform: translate3d(0, 80%, 0);
+        transform: translate3d(0, 80%, 0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+
+// Animation
+
+@-webkit-keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+    33.3% {
+        transform: translateY(-6px);
+    }
+    49.95% {
+        transform: translateY(4px);
+    }
+    66.6% {
+        transform: translateY(-2px);
+    }
+    83.25% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes wobble-vertical {
+    16.65% {
+        transform: translateY(8px);
+    }
+    33.3% {
+        transform: translateY(-6px);
+    }
+    49.95% {
+        transform: translateY(4px);
+    }
+    66.6% {
+        transform: translateY(-2px);
+    }
+    83.25% {
+        transform: translateY(1px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+

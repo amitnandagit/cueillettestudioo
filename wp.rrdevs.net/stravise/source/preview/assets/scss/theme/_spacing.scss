@@ -1,0 +1,40 @@
+
+@use '../utils' as *;
+
+/*---------------------------------
+	1.8 spacing
+---------------------------------*/
+.section-space {
+	padding-top: 120px;
+	padding-bottom: 120px;
+	@media #{$md} {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+.section-space-top {
+	padding-top: 120px;
+	@media #{$md} {
+		padding-top: 80px;
+	}
+	@media #{$sm,$xs} {
+		padding-top: 70px;
+	}
+}
+
+.pt-200 {
+	padding-top: 200px;
+	@media #{$xl, $lg, $md} {
+		padding-top: 100px;
+	}
+
+	@media #{$sm, $xs} {
+		padding-top: 70px;
+	}
+
+}

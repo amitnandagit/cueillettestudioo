@@ -1,0 +1,115 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  10.5 service-details
+/*----------------------------------------*/
+
+.core-features {
+    overflow: hidden;
+
+    .container {
+        position: relative;
+    }
+
+    &__shape {
+
+        img {
+            width: auto;
+        }
+
+        .image-1 {
+            position: absolute;
+            top: -273px;
+            left: -240px;
+            background-repeat: no-repeat;
+        }
+
+        .image-2 {
+            position: absolute;
+            top: 178px;
+            right: -322px;
+            z-index: -1;
+            width: 855px;
+            height: 855px;
+
+        }
+    }
+
+    .section__title-wrapper {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 710px;
+    }
+
+    &__item {
+        display: flex;
+        padding: 54px 20px;
+        margin-bottom: 30px;
+        align-items: center;
+        border-radius: 15px;
+        border: 1px solid #E8E8EA;
+        background: #FFF;
+        flex-direction: column;
+        justify-content: center;
+
+        &-icon {
+            width: 105px;
+            height: 105px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include border-radius(500px);
+            fill: #F8F9FF;
+            border: 1px solid #E8E8E8;
+            box-shadow: (0px 18px 41px rgba(0, 0, 0, 0.08));
+
+            @media #{$xs} {
+                width: 90px;
+                height: 90px;
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+
+                @media #{$xs} {
+                    width: 45px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &-text {
+            text-align: center;
+            margin-top: 18px;
+
+            span {
+                display: block;
+                margin-top: 2px;
+                font-weight: var(--rr-fw-medium);
+                color: var(--rr-text-body-light);
+            }
+
+            & h4 {
+                @media #{$xl} {
+                    font-size: 22px;
+                }
+                @media #{$lg} {
+                    font-size: 25px;
+                }
+                @media #{$md} {
+                    font-size: 18px;
+                }
+                @media #{$sm, $xs} {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+}
+
+.mb-minus-30{
+    margin-bottom: -30px;
+}

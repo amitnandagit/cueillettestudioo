@@ -1,0 +1,58 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  10.3 feedback
+/*----------------------------------------*/
+
+.testi-item-2{
+    background: var(--rr-common-white);
+    border: 1px solid #E6E6E6;
+    box-shadow: 0px 14px 68px #E8E8E8;
+    border-radius: 15px;
+    padding: 40px;
+    position: relative;
+
+    @media #{$md, $sm, $xs} {
+        padding: 30px 20px;
+    }
+
+    .testi-top{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eaeaea;
+        flex-wrap: wrap;
+        row-gap: 15px;
+
+        .testi-author{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 60px 1fr;
+            grid-gap: 15px;
+            .name{
+                font-size: 22px;
+                font-weight: 600;
+                margin-bottom: 0;
+                span{
+                    display: block;
+                    font-family: var(--bz-ff-body);
+                    font-size: 14px;
+                    color: var(--rr-text-body);
+                    font-weight: 400;
+                    margin-top: -15px;
+                }
+            }
+        }
+        .review{
+            li{
+                display: inline-flex;
+                color: #FFB930;
+            }
+        }
+    }
+    p{
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+}
