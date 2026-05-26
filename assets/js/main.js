@@ -214,13 +214,17 @@
             nullTargetWarn: false,
         });
 
-        let smoother = ScrollSmoother.create({
-            smooth: 1.5,
-            effects: true,
-            smoothTouch: false,
-            normalizeScroll: false,
-            ignoreMobileResize: true,
-        });
+        var isMobile = window.innerWidth <= 991;
+
+        if (!isMobile) {
+            let smoother = ScrollSmoother.create({
+                smooth: 0.8,
+                effects: false,
+                smoothTouch: false,
+                normalizeScroll: false,
+                ignoreMobileResize: true,
+            });
+        }
     }
 
     // Title-anim 
