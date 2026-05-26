@@ -1722,7 +1722,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .header .primary-header-inner .header-logo img {
-    max-width: 170px;
+   max-height: 60px;
 }
 
 .header .primary-header-inner .header-logo .logo-light {
@@ -1747,13 +1747,13 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
     .header .primary-header-inner .header-logo img {
-        max-width: 150px;
+                max-height: 60px;
     }
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .header .primary-header-inner .header-logo img {
-        max-width: 150px;
+        max-height: 60px;
     }
 }
 
@@ -4336,7 +4336,7 @@ html, body {
 /* ── HEADER ── */
 @media (max-width: 575px) {
     .header .primary-header-inner .header-logo img {
-        max-width: 130px;
+        max-height: 60px;
     }
 }
 

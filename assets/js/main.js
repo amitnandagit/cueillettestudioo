@@ -21,18 +21,10 @@
     });
 
 
-    $(".preloader-close").on("click", function() {
-        $("#preloader").delay(0).fadeOut(500);
-    });
-
     /*======================================
-        Preloader activation
+        Odometer
     ========================================*/
     $(window).on("load", function(event) {
-
-        $("#preloader").delay(1000).fadeOut(500);
-
-        /* Odometer */
         setTimeout(function() {
             $(".odometer").waypoint(
                 function() {
@@ -47,10 +39,6 @@
                 }
             );
         }, 1000);
-    });
-
-    $(".preloader-close").on("click", function() {
-        $("#preloader").delay(0).fadeOut(500);
     });
 
     if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
